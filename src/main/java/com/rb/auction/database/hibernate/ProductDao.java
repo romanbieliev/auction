@@ -1,7 +1,7 @@
-package com.rb.estore.database.hibernate;
+package com.rb.auction.database.hibernate;
 
-import com.rb.estore.database.InterfaceProductDao;
-import com.rb.estore.model.Product;
+import com.rb.auction.database.InterfaceProductDao;
+import com.rb.auction.model.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.NoResultException;
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +23,7 @@ public class ProductDao implements InterfaceProductDao {
     public List<Product> getProducts() {
         Session session = sessionFactory.openSession();
 
-        Query<Product> query = session.createQuery("FROM com.rb.estore.model.Product");
+        Query<Product> query = session.createQuery("FROM com.rb.auction.model.Product");
 
         try {
             List<Product> books = query.getResultList();
@@ -62,7 +61,7 @@ public class ProductDao implements InterfaceProductDao {
     public Optional<Product> getProductById(int productId) {
         Session session = sessionFactory.openSession();
 
-        Query<Product> query = session.createQuery("FROM com.rb.estore.model.Product WHERE id = :id");
+        Query<Product> query = session.createQuery("FROM com.rb.auction.model.Product WHERE id = :id");
         query.setParameter("id", productId);
 
         try {

@@ -1,6 +1,6 @@
-package com.rb.estore.model.view;
+package com.rb.auction.model.view;
 
-import com.rb.estore.model.User;
+import com.rb.auction.model.User;
 
 public class RegisterUser extends User implements Cloneable {
     private String passwordRepeat;

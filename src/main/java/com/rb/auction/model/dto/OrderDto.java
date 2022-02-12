@@ -1,9 +1,8 @@
-package com.rb.estore.model.dto;
+package com.rb.auction.model.dto;
 
-import com.rb.estore.model.Order;
-import com.rb.estore.model.OrderItem;
-import com.rb.estore.model.User;
-import javax.persistence.*;
+import com.rb.auction.model.Order;
+import com.rb.auction.model.OrderItem;
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;

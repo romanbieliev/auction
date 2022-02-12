@@ -1,10 +1,9 @@
-package com.rb.estore.configuration;
+package com.rb.auction.configuration;
 
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -13,7 +12,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @Configuration
-@ComponentScan("com.rb.estore")
+@ComponentScan("com.rb.auction")
 public class AppConfiguration implements WebMvcConfigurer {
 
     private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {

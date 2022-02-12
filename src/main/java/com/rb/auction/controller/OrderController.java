@@ -1,7 +1,7 @@
-package com.rb.estore.controller;
+package com.rb.auction.controller;
 
 
-import com.rb.estore.service.InterfaceOrderService;
+import com.rb.auction.service.InterfaceOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

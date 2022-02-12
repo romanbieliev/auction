@@ -1,8 +1,8 @@
-package com.rb.estore.rest;
+package com.rb.auction.rest;
 
-import com.rb.estore.model.Order;
-import com.rb.estore.model.dto.OrderDto;
-import com.rb.estore.service.InterfaceOrderService;
+import com.rb.auction.model.Order;
+import com.rb.auction.model.dto.OrderDto;
+import com.rb.auction.service.InterfaceOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

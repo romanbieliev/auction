@@ -1,6 +1,6 @@
-package com.rb.estore.model;
+package com.rb.auction.model;
 
-import com.rb.estore.sorter.SortByDate;
+import com.rb.auction.sorter.SortByDate;
 import org.hibernate.annotations.SortComparator;
 
 import javax.persistence.*;

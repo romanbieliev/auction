@@ -1,7 +1,7 @@
-package com.rb.estore.database.jdbc;
+package com.rb.auction.database.jdbc;
 
-import com.rb.estore.database.InterfaceUserDao;
-import com.rb.estore.model.User;
+import com.rb.auction.database.InterfaceUserDao;
+import com.rb.auction.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.*;

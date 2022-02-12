@@ -1,7 +1,7 @@
-package com.rb.estore.rest;
+package com.rb.auction.rest;
 
-import com.rb.estore.model.Product;
-import com.rb.estore.service.InterfaceProductService;
+import com.rb.auction.model.Product;
+import com.rb.auction.service.InterfaceProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

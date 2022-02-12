@@ -1,10 +1,10 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.database.InterfaceAuctionDao;
-import com.rb.estore.model.Auction;
-import com.rb.estore.model.AuctionBet;
-import com.rb.estore.model.Product;
-import com.rb.estore.session.SessionObject;
+import com.rb.auction.database.InterfaceAuctionDao;
+import com.rb.auction.model.Auction;
+import com.rb.auction.model.AuctionBet;
+import com.rb.auction.model.Product;
+import com.rb.auction.session.SessionObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

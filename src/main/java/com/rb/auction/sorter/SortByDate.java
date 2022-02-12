@@ -1,6 +1,6 @@
-package com.rb.estore.sorter;
+package com.rb.auction.sorter;
 
-import com.rb.estore.model.AuctionBet;
+import com.rb.auction.model.AuctionBet;
 
 import java.util.Comparator;
 

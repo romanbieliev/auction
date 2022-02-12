@@ -1,10 +1,8 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.model.Auction;
-import com.rb.estore.model.AuctionBet;
-import com.rb.estore.model.Product;
-
-import java.util.Set;
+import com.rb.auction.model.Auction;
+import com.rb.auction.model.AuctionBet;
+import com.rb.auction.model.Product;
 
 public interface InterfaceAuctionService {
     void addAuction(Product product);

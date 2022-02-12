@@ -28,12 +28,12 @@
 
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="com.rb.estore.model.User"/>
-        <mapping class="com.rb.estore.model.Product"/>
-        <mapping class="com.rb.estore.model.Order"/>
-        <mapping class="com.rb.estore.model.OrderItem"/>
-        <mapping class="com.rb.estore.model.Auction"/>
-        <mapping class="com.rb.estore.model.AuctionBet"/>
+        <mapping class="com.rb.auction.model.User"/>
+        <mapping class="com.rb.auction.model.Product"/>
+        <mapping class="com.rb.auction.model.Order"/>
+        <mapping class="com.rb.auction.model.OrderItem"/>
+        <mapping class="com.rb.auction.model.Auction"/>
+        <mapping class="com.rb.auction.model.AuctionBet"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,6 +1,6 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.model.view.RegisterUser;
+import com.rb.auction.model.view.RegisterUser;
 
 public interface InterfaceAuthenticationService {
     void register(RegisterUser registerUser);

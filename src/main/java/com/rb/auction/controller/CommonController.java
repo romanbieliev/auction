@@ -1,8 +1,7 @@
-package com.rb.estore.controller;
+package com.rb.auction.controller;
 
-import com.rb.estore.database.InterfaceUserDao;
-import com.rb.estore.model.User;
-import com.rb.estore.service.InterfaceProductService;
+import com.rb.auction.database.InterfaceUserDao;
+import com.rb.auction.service.InterfaceProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

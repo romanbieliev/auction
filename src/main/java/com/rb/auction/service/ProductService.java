@@ -1,7 +1,7 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.database.InterfaceProductDao;
-import com.rb.estore.model.Product;
+import com.rb.auction.database.InterfaceProductDao;
+import com.rb.auction.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

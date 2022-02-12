@@ -1,8 +1,8 @@
-package com.rb.estore.controller;
+package com.rb.auction.controller;
 
-import com.rb.estore.model.view.RegisterUser;
-import com.rb.estore.service.InterfaceAuthenticationService;
-import com.rb.estore.session.SessionObject;
+import com.rb.auction.model.view.RegisterUser;
+import com.rb.auction.service.InterfaceAuthenticationService;
+import com.rb.auction.session.SessionObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.model.Product;
+import com.rb.auction.model.Product;
 
 import java.util.List;
 

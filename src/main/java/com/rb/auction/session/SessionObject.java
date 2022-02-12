@@ -1,7 +1,7 @@
-package com.rb.estore.session;
+package com.rb.auction.session;
 
-import com.rb.estore.model.Cart;
-import com.rb.estore.model.User;
+import com.rb.auction.model.Cart;
+import com.rb.auction.model.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 

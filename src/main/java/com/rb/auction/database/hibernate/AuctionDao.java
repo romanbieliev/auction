@@ -1,8 +1,8 @@
-package com.rb.estore.database.hibernate;
+package com.rb.auction.database.hibernate;
 
-import com.rb.estore.database.InterfaceAuctionDao;
-import com.rb.estore.model.Auction;
-import com.rb.estore.model.AuctionBet;
+import com.rb.auction.database.InterfaceAuctionDao;
+import com.rb.auction.model.Auction;
+import com.rb.auction.model.AuctionBet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -42,7 +42,7 @@ public class AuctionDao implements InterfaceAuctionDao {
     public Optional<Auction> getById(int id) {
         Session session = sessionFactory.openSession();
 
-        Query<Auction> query = session.createQuery("FROM com.rb.estore.model.Auction WHERE id = :id");
+        Query<Auction> query = session.createQuery("FROM com.rb.auction.model.Auction WHERE id = :id");
         query.setParameter("id", id);
 
         try {
@@ -60,7 +60,7 @@ public class AuctionDao implements InterfaceAuctionDao {
     public Optional<Auction> getByIdAndSortBet(int id) {
         Session session = sessionFactory.openSession();
 
-        Query<Auction> query = session.createQuery("FROM com.rb.estore.model.Auction AS Au" +
+        Query<Auction> query = session.createQuery("FROM com.rb.auction.model.Auction AS Au" +
                 " INNER JOIN FETCH Au.auctionBets AS Be" +
                 " INNER JOIN FETCH Au.product AS Pr" +
                 " WHERE Au.id = 3" +
@@ -122,7 +122,7 @@ public class AuctionDao implements InterfaceAuctionDao {
     public Optional<AuctionBet> getBidById(int id) {
         Session session = this.sessionFactory.openSession();
 
-        Query<AuctionBet> query = session.createQuery("FROM com.rb.estore.model.AuctionBid WHERE id = :id");
+        Query<AuctionBet> query = session.createQuery("FROM com.rb.auction.model.AuctionBid WHERE id = :id");
         query.setParameter("id", id);
 
         try {

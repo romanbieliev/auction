@@ -1,6 +1,6 @@
-package com.rb.estore.database;
+package com.rb.auction.database;
 
-import com.rb.estore.model.Order;
+import com.rb.auction.model.Order;
 
 import java.util.Optional;
 

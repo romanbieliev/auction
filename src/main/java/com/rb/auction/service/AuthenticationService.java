@@ -1,12 +1,11 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
 
 
-import com.rb.estore.database.InterfaceUserDao;
-import com.rb.estore.database.hibernate.UserDao;
-import com.rb.estore.model.User;
-import com.rb.estore.model.view.RegisterUser;
-import com.rb.estore.session.SessionObject;
+import com.rb.auction.database.InterfaceUserDao;
+import com.rb.auction.model.User;
+import com.rb.auction.model.view.RegisterUser;
+import com.rb.auction.session.SessionObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

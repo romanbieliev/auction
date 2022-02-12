@@ -1,7 +1,7 @@
-package com.rb.estore.database.hibernate;
+package com.rb.auction.database.hibernate;
 
-import com.rb.estore.database.InterfaceUserDao;
-import com.rb.estore.model.User;
+import com.rb.auction.database.InterfaceUserDao;
+import com.rb.auction.model.User;
 
 
 import org.hibernate.Session;
@@ -44,7 +44,7 @@ public class UserDao implements InterfaceUserDao {
     public Optional<User> getUserById(int id) {
         Session session  = this.sessionFactory.openSession();
 
-        Query<User> query = session.createQuery("FROM com.rb.estore.model.User WHERE id = :id");
+        Query<User> query = session.createQuery("FROM com.rb.auction.model.User WHERE id = :id");
         query.setParameter("id", id);
 
         try {
@@ -65,7 +65,7 @@ public class UserDao implements InterfaceUserDao {
 
         Session session = this.sessionFactory.openSession();
 
-        Query<User> query = session.createQuery("FROM com.rb.estore.model.User WHERE login = :login");
+        Query<User> query = session.createQuery("FROM com.rb.auction.model.User WHERE login = :login");
         query.setParameter("login", login);
 
         try {

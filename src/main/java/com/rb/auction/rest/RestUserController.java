@@ -1,7 +1,7 @@
-package com.rb.estore.rest;
+package com.rb.auction.rest;
 
-import com.rb.estore.model.User;
-import com.rb.estore.service.InterfaceUserService;
+import com.rb.auction.model.User;
+import com.rb.auction.service.InterfaceUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

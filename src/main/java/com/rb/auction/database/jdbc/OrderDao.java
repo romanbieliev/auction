@@ -1,8 +1,8 @@
-package com.rb.estore.database.jdbc;
+package com.rb.auction.database.jdbc;
 
-import com.rb.estore.database.InterfaceOrderItemDao;
-import com.rb.estore.database.InterfaceOrderDao;
-import com.rb.estore.model.Order;
+import com.rb.auction.database.InterfaceOrderItemDao;
+import com.rb.auction.database.InterfaceOrderDao;
+import com.rb.auction.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.*;

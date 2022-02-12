@@ -1,8 +1,7 @@
-package com.rb.estore.database.hibernate;
+package com.rb.auction.database.hibernate;
 
-import com.rb.estore.database.InterfaceOrderDao;
-import com.rb.estore.model.Order;
-import com.rb.estore.model.Product;
+import com.rb.auction.database.InterfaceOrderDao;
+import com.rb.auction.model.Order;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -43,7 +42,7 @@ public class OrderDao implements InterfaceOrderDao {
 
         Session session = sessionFactory.openSession();
 
-        Query<Order> query = session.createQuery("FROM com.rb.estore.model.Order WHERE id = :id");
+        Query<Order> query = session.createQuery("FROM com.rb.auction.model.Order WHERE id = :id");
         query.setParameter("id", orderId);
 
         try {

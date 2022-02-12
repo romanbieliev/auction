@@ -1,9 +1,9 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.database.InterfaceProductDao;
-import com.rb.estore.model.OrderItem;
-import com.rb.estore.model.Product;
-import com.rb.estore.session.SessionObject;
+import com.rb.auction.database.InterfaceProductDao;
+import com.rb.auction.model.OrderItem;
+import com.rb.auction.model.Product;
+import com.rb.auction.session.SessionObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

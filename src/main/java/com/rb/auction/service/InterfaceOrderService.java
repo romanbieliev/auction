@@ -1,6 +1,6 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.model.Order;
+import com.rb.auction.model.Order;
 
 public interface InterfaceOrderService {
     void confirmOrder();

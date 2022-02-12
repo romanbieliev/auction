@@ -1,12 +1,11 @@
-package com.rb.estore.controller;
+package com.rb.auction.controller;
 
-import com.rb.estore.model.Auction;
-import com.rb.estore.model.AuctionBet;
-import com.rb.estore.model.Product;
-import com.rb.estore.model.User;
-import com.rb.estore.service.InterfaceAuctionService;
-import com.rb.estore.service.InterfaceProductService;
-import com.rb.estore.session.SessionObject;
+import com.rb.auction.model.Auction;
+import com.rb.auction.model.AuctionBet;
+import com.rb.auction.model.Product;
+import com.rb.auction.model.User;
+import com.rb.auction.service.InterfaceAuctionService;
+import com.rb.auction.service.InterfaceProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Set;
-import java.util.TreeSet;
 
 @Controller
 public class AuctionController {

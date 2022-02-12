@@ -1,8 +1,8 @@
-package com.rb.estore.service;
+package com.rb.auction.service;
 
-import com.rb.estore.database.InterfaceOrderDao;
-import com.rb.estore.model.Order;
-import com.rb.estore.session.SessionObject;
+import com.rb.auction.database.InterfaceOrderDao;
+import com.rb.auction.model.Order;
+import com.rb.auction.session.SessionObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

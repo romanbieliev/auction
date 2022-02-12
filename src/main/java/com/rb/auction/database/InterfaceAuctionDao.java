@@ -1,7 +1,7 @@
-package com.rb.estore.database;
+package com.rb.auction.database;
 
-import com.rb.estore.model.Auction;
-import com.rb.estore.model.AuctionBet;
+import com.rb.auction.model.Auction;
+import com.rb.auction.model.AuctionBet;
 
 import java.util.Optional;
 

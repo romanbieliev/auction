@@ -1,9 +1,7 @@
-package com.rb.estore.model;
+package com.rb.auction.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Cart {
     private List<OrderItem> orderItems = new ArrayList<>();
