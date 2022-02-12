@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jarir Bokstore</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+<div id="content">
+    <form method="post" id="addproduct-form">
+        <input type="text" placeholder="Title" th:field="${rproduct.title}" id="title">
+        <br>
+        <input type="text" placeholder="Code" th:field="${rproduct.code}" id="code">
+        <br>
+        <input type="text" placeholder="Price" th:field="${rproduct.price}" id="price">
+        <br>
+        <input type="text" placeholder="Quantity" th:field="${rproduct.quantity}" id="quantity">
+        <br>
+        <input type="submit" value="Add product">
+    </form>
+</div>
+</body>
+</html>

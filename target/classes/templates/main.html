@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jarir Bokstore</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+<div id="content">
+   <div th:each="product : ${rproducts}" class="product" id="book">
+       <div th:text="${product.title}" id="title"></div>
+       <div th:text="${product.code}" id="code"></div>
+       <div th:text="${product.price}" id="price"></div>
+       <div th:text="${product.quantity}" id="quantity"></div>
+       <a th:href="@{/cart/add/{id}(id=${product.id})}">Add to cart</a>
+   </div>
+</div>
+</body>
+</html>

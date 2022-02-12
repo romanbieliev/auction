@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+<div id="content">
+    <h2>Cart</h2>
+    <div th:each="item : ${cart.orderItems}" class="item">
+        <div th:text="${item.product.id}" class="text"></div>
+        <div th:text="${item.product.title}" class="text"></div>
+        <div th:text="${item.product.code}" class="text"></div>
+        <div th:text="${item.quantity}" class="text"></div>
+        <div th:text="${item.product.price}" class="text"></div>
+    </div>
+    <div th:text="${cart.getSum()}" class="item-sum"></div>
+    <a th:href="@{/cart/clear}">Clear cart</a>
+    <a th:href="@{/order}">Order</a>
+</div>
+
+</body>
+</html>

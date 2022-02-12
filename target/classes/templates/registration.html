@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jarir Bokstore</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+<div id="content">
+    <form method="post" id="register-form">
+        <input type="text" placeholder="Name" th:field="${ruser.name}" id="name">
+        <br>
+        <input type="text" placeholder="Surname" th:field="${ruser.surname}" id="surname">
+        <br>
+        <input type="text" placeholder="Login" th:field="${ruser.login}" id="login">
+        <br>
+        <input type="password" placeholder="Password" th:field="${ruser.password}" id="pass">
+        <br>
+        <input type="password" placeholder="Repeat password" th:field="${ruser.passwordRepeat}" id="pass2">
+        <br>
+        <input type="submit" value="Zarejestruj">
+    </form>
+</div>
+</body>
+</html>
