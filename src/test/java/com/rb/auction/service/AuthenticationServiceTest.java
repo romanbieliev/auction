@@ -1,6 +1,7 @@
 package com.rb.auction.service;
 
 import com.rb.auction.configuration.AppConfiguration;
+import com.rb.auction.configuration.TestConfiguration;
 import com.rb.auction.session.SessionObject;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,7 +13,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = {AppConfiguration.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 public class AuthenticationServiceTest {
 
     @Autowired
@@ -23,8 +24,6 @@ public class AuthenticationServiceTest {
 
     @Test
     public void AuthenticationTest() {
-        AuthenticationService authenticationService = new AuthenticationService();
-
         String login = "admin";
         String password = "admin";
 
