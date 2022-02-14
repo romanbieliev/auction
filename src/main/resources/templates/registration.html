@@ -1,26 +1,53 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Jarir Bokstore</title>
-    <link rel="stylesheet" href="common.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="common.css">
+  <title>Hello, world!</title>
 </head>
 <body>
-
-<div id="content">
-    <form method="post" id="register-form">
-        <input type="text" placeholder="Name" th:field="${ruser.name}" id="name">
-        <br>
-        <input type="text" placeholder="Surname" th:field="${ruser.surname}" id="surname">
-        <br>
-        <input type="text" placeholder="Login" th:field="${ruser.login}" id="login">
-        <br>
-        <input type="password" placeholder="Password" th:field="${ruser.password}" id="pass">
-        <br>
-        <input type="password" placeholder="Repeat password" th:field="${ruser.passwordRepeat}" id="pass2">
-        <br>
-        <input type="submit" value="Zarejestruj">
-    </form>
+<div class="container">
+  <div class="head border-bottom mb-3 pb-3 py-3">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-explicit-fill" viewBox="0 0 16 16">
+        <path d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0h-11Zm4.326 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z"/>
+      </svg>
+      <span class="fs-3">Estore</span>
+    </a>
+  </div>
+  <form method="post">
+    <legend>Registration form</legend>
+    <div class="mb-3">
+      <label for="inputLogin" class="form-label">Name</label>
+      <input type="text" class="form-control" id="nameLogin" aria-describedby="loginHelp" th:field="${ruser.name}">
+      <div id="nameHelp" class="form-text">Name user</div>
+    </div>
+    <div class="mb-3">
+      <label for="inputLogin" class="form-label">Surname</label>
+      <input type="text" class="form-control" id="surnameLogin" aria-describedby="loginHelp" th:field="${ruser.surname}">
+      <div id="surnameHelp" class="form-text">Surname user</div>
+    </div>
+    <div class="mb-3">
+      <label for="inputLogin" class="form-label">Login</label>
+      <input type="text" class="form-control" id="inputLogin" aria-describedby="loginHelp" th:field="${ruser.login}">
+      <div id="loginHelp" class="form-text">Login or email</div>
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp" th:field="${ruser.password}">
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Repeat password</label>
+      <input type="password" class="form-control" id="inputPasswordRepeat" aria-describedby="passwordHelp" th:field="${ruser.passwordRepeat}">
+    </div>
+    <button type="submit" class="btn btn-sm btn-outline-primary">Register</button>
+  </form>
 </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
