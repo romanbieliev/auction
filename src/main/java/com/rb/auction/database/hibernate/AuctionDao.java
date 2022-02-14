@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.NoResultException;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -23,15 +24,16 @@ public class AuctionDao implements InterfaceAuctionDao {
     public void add(Auction auction) {
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
+        transaction = session.beginTransaction();
 
         try {
-            transaction = session.beginTransaction();
             session.save(auction);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
+            e.printStackTrace();
         } finally {
             session.close();
         }
@@ -40,31 +42,10 @@ public class AuctionDao implements InterfaceAuctionDao {
 
     @Override
     public Optional<Auction> getById(int id) {
-        Session session = sessionFactory.openSession();
+        Session session = this.sessionFactory.openSession();
 
         Query<Auction> query = session.createQuery("FROM com.rb.auction.model.Auction WHERE id = :id");
         query.setParameter("id", id);
-
-        try {
-            Auction auction = query.getSingleResult();
-            return Optional.of(auction);
-        } catch (NoResultException e) {
-            e.printStackTrace();
-            return Optional.empty();
-        } finally {
-            session.close();
-        }
-    }
-
-    @Override
-    public Optional<Auction> getByIdAndSortBet(int id) {
-        Session session = sessionFactory.openSession();
-
-        Query<Auction> query = session.createQuery("FROM com.rb.auction.model.Auction AS Au" +
-                " INNER JOIN FETCH Au.auctionBets AS Be" +
-                " INNER JOIN FETCH Au.product AS Pr" +
-                " WHERE Au.id = 3" +
-                " ORDER BY Be.date ");
 
         try {
             Auction auction = query.getSingleResult();
@@ -119,6 +100,23 @@ public class AuctionDao implements InterfaceAuctionDao {
     }
 
     @Override
+    public List<Auction> getAll() {
+        Session session = this.sessionFactory.openSession();
+
+        Query<Auction> query = session.createQuery("FROM com.rb.auction.model.Auction");
+
+        try {
+            List<Auction> auctions = query.getResultList();
+            return auctions;
+        } catch (NoResultException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
     public Optional<AuctionBet> getBidById(int id) {
         Session session = this.sessionFactory.openSession();
 
@@ -135,5 +133,6 @@ public class AuctionDao implements InterfaceAuctionDao {
             session.close();
         }
     }
+
 
 }

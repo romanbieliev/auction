@@ -18,11 +18,11 @@
         </a>
     </div>
     <div class="products">
-        <div th:each="product : ${rproducts}" class="card mb-2">
+        <div th:each="auction : ${rauctions}" class="card mb-2">
             <div class="card-body">
-                <h5 th:inline="text" class="card-title">[[${product.title}]]</h5>
-                <h6 th:inline="text" class="card-subtitle mb-4 text-muted">[[${product.price}]] usd</h6>
-                <a th:href="@{/cart/add/{id}(id=${product.id})}" type="button" class="btn btn-sm btn-outline-primary">Add to cart</a>
+                <h5 th:inline="text" class="card-title">[[${auction.product.title}]]</h5>
+                <p class="card-subtitle mb-2" th:inline="text">End date: [[${#temporals.format(auction.endDate, 'dd.MM.yy HH:mm')}]]</p>
+                <a th:href="@{/auction/{id}(id=${auction.id})}" type="button" class="btn btn-sm btn-outline-primary">Show</a>
             </div>
         </div>
     </div>

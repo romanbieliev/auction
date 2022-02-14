@@ -26,4 +26,9 @@ public class ProductDaoStub implements InterfaceProductDao {
     public void updateProduct(Product product) {
 
     }
+
+    @Override
+    public List<Product> getByUserId(int id) {
+        return null;
+    }
 }

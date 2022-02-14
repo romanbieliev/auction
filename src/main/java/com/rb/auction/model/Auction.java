@@ -7,6 +7,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 @Entity(name = "auctions")
 public class Auction {
@@ -24,9 +26,9 @@ public class Auction {
     private User user;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @SortComparator(SortByDate.class)
-    private Set<AuctionBet> auctionBets = new HashSet<>();
+    private SortedSet<AuctionBet> auctionBets = new TreeSet<>();
 
-    public Auction(int id, LocalDateTime startDate, LocalDateTime endDate, Status status, Product product, User user, Set<AuctionBet> auctionBets) {
+    public Auction(int id, LocalDateTime startDate, LocalDateTime endDate, Status status, Product product, User user, SortedSet<AuctionBet> auctionBets) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -39,6 +41,7 @@ public class Auction {
     public Auction() {
 
     }
+
 
     public User getUser() {
         return user;
@@ -88,11 +91,11 @@ public class Auction {
         this.product = product;
     }
 
-    public Set<AuctionBet> getAuctionBets() {
+    public SortedSet<AuctionBet> getAuctionBets() {
         return auctionBets;
     }
 
-    public void setAuctionBets(Set<AuctionBet> auctionBets) {
+    public void setAuctionBets(SortedSet<AuctionBet> auctionBets) {
         this.auctionBets = auctionBets;
     }
 

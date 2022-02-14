@@ -4,6 +4,7 @@ import com.rb.auction.database.InterfaceAuctionDao;
 import com.rb.auction.model.Auction;
 import com.rb.auction.model.AuctionBet;
 
+import java.util.List;
 import java.util.Optional;
 
 public class AuctionDaoStub implements InterfaceAuctionDao {
@@ -14,11 +15,6 @@ public class AuctionDaoStub implements InterfaceAuctionDao {
 
     @Override
     public Optional<Auction> getById(int id) {
-        return Optional.empty();
-    }
-
-    @Override
-    public Optional<Auction> getByIdAndSortBet(int id) {
         return Optional.empty();
     }
 
@@ -35,5 +31,10 @@ public class AuctionDaoStub implements InterfaceAuctionDao {
     @Override
     public Optional<AuctionBet> getBidById(int id) {
         return Optional.empty();
+    }
+
+    @Override
+    public List<Auction> getAll() {
+        return null;
     }
 }

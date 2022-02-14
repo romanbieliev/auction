@@ -1,7 +1,6 @@
 package com.rb.auction.configuration;
 
 import com.rb.auction.database.InterfaceAuctionDao;
-import com.rb.auction.database.InterfaceOrderDao;
 import com.rb.auction.database.InterfaceProductDao;
 import com.rb.auction.database.InterfaceUserDao;
 import com.rb.auction.database.hibernate.*;
@@ -20,11 +19,6 @@ public class TestConfiguration {
     @Bean
     public InterfaceAuctionDao auctionDao() {
         return new AuctionDaoStub();
-    }
-
-    @Bean
-    public InterfaceOrderDao orderDao() {
-        return new OrderDaoStub();
     }
 
     @Bean

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 public class ProductDao implements InterfaceProductDao {
@@ -34,7 +35,24 @@ public class ProductDao implements InterfaceProductDao {
         } finally {
             session.close();
         }
+    }
 
+    @Override
+    public List<Product> getByUserId(int id) {
+        Session session = this.sessionFactory.openSession();
+
+        Query<Product> query = session.createQuery("FROM com.rb.auction.model.Product WHERE user.id = :id");
+        query.setParameter("id", id);
+
+        try {
+            List<Product> products = query.getResultList();
+            return products;
+        } catch (NoResultException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
     @Override

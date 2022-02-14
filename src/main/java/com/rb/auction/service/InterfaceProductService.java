@@ -9,4 +9,5 @@ public interface InterfaceProductService {
     void addProduct(Product product);
     Product getProductById(int productId);
     void updateProduct(Product product);
+    List<Product> getProductsByUserId(int id);
 }

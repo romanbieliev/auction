@@ -10,4 +10,5 @@ public interface InterfaceProductDao {
     void addProduct(Product product);
     Optional<Product> getProductById(int productId);
     void updateProduct(Product product);
+    List<Product> getByUserId(int id);
 }

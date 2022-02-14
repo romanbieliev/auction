@@ -23,12 +23,12 @@ public class AuthenticationController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registerShow(Model model) {
         model.addAttribute("ruser", new RegisterUser());
-        return "registration-b";
+        return "registration";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginShow() {
-        return "login-b";
+        return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)

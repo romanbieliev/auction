@@ -30,7 +30,7 @@ public class ProductController {
         model.addAttribute("rproduct", new Product());
 
         if (this.sessionObject.isLogged()) {
-            return "addproduct-b";
+            return "addproduct";
         }
 
         return "redirect:/main";
@@ -51,6 +51,6 @@ public class ProductController {
         model.addAttribute("rproduct", product);
         model.addAttribute("rauctionbid", new AuctionBet());
 
-        return "product-b";
+        return "product";
     }
 }

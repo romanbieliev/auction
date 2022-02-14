@@ -1,14 +1,17 @@
 package com.rb.auction.service;
 
 import com.rb.auction.database.InterfaceAuctionDao;
+import com.rb.auction.database.InterfaceProductDao;
 import com.rb.auction.model.Auction;
 import com.rb.auction.model.AuctionBet;
 import com.rb.auction.model.Product;
+import com.rb.auction.model.view.AuctionView;
 import com.rb.auction.session.SessionObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -16,7 +19,7 @@ import java.util.Set;
 public class AuctionService implements InterfaceAuctionService {
 
     @Autowired
-    InterfaceProductService interfaceProductService;
+    InterfaceProductDao interfaceProductDao;
 
     @Autowired
     InterfaceAuctionDao interfaceAuctionDao;
@@ -25,38 +28,35 @@ public class AuctionService implements InterfaceAuctionService {
     SessionObject sessionObject;
 
     @Override
-    public void addAuction(Product product) {
+    public void addAuction(AuctionView auctionView) {
+        Optional<Product> productOptional = this.interfaceProductDao.getProductById(auctionView.getProductId());
 
-        Product productDb = interfaceProductService.getProductById(product.getId());
-        productDb.setPrice(product.getPrice());
-        interfaceProductService.updateProduct(productDb);
+        if (productOptional.isEmpty()) {
+            return;
+        }
 
-        LocalDateTime today = LocalDateTime.now();
-        LocalDateTime todayPlusDays = today.plusDays(10);
+        Product product = productOptional.get();
+        Auction auction = auctionView.parentCopy();
 
-        Auction auction = new Auction();
-        auction.setStartDate(LocalDateTime.now());
-        auction.setEndDate(todayPlusDays);
+        LocalDateTime startDay = LocalDateTime.now();
+        LocalDateTime endDay = startDay.plusDays(auctionView.getDuration());
+
+        auction.setStartDate(startDay);
+        auction.setEndDate(endDay);
         auction.setProduct(product);
+        auction.setUser(sessionObject.getUser());
         auction.setStatus(Auction.Status.OPEN);
 
-        interfaceAuctionDao.add(auction);
+        this.interfaceAuctionDao.add(auction);
+    }
+
+    public List<Auction> getAll() {
+        return this.interfaceAuctionDao.getAll();
     }
 
     @Override
     public Auction getAuctionById(int id) {
         Optional<Auction> auctionOptional = interfaceAuctionDao.getById(id);
-
-        if (auctionOptional.isEmpty()) {
-            return null;
-        }
-
-        return auctionOptional.get();
-    }
-
-    @Override
-    public Auction getAuctionByIdAndSortBet(int id) {
-        Optional<Auction> auctionOptional = interfaceAuctionDao.getByIdAndSortBet(id);
 
         if (auctionOptional.isEmpty()) {
             return null;

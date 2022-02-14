@@ -9,20 +9,33 @@ public class Product {
     private int id;
     private String title;
     private String code;
+    @Column(columnDefinition = "LONGTEXT")
     private String text;
     private double price;
     private int quantity;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private User user;
 
-    public Product(int id, String title, String code, double price, int quantity) {
+    public Product(int id, String title, String code, String text, double price, int quantity, User user) {
         this.id = id;
         this.title = title;
         this.code = code;
+        this.text = text;
         this.price = price;
         this.quantity = quantity;
+        this.user = user;
     }
 
     public Product() {
         
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getText() {
